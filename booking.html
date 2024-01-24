@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: 'poppins',sans-serif;
+        }
+        .container{
+            width:100%;
+            height: 100vh;
+            background: paleturquoise;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        form{
+            background: white;
+            display:flex;
+            flex-direction: column;
+            padding: 2vw 4vw;
+            width: 70%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+        form h3{
+            color:#555;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        form input,form textarea{
+            border: 0;
+            margin:10px 0;
+            padding: 20px;
+            outline: none;
+            background: #f5f5f5;
+            font-size: 16px;
+        }
+        form button{
+            padding:15px;
+            background: #ff5361;
+            color: #f5f5f5;
+            font-size: 18px;
+            border: 0;
+            outline:none;
+            cursor: pointer;
+            width: 150px;
+            margin: 20px auto 0;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="sendemail();reset();return false;">
+            <h3>Register</h3>
+            <input type="text" id="name" placeholder="your name" required>
+            <input type="email" id="email" placeholder="email id" required>
+            <input type="text" id="phone" placeholder="phone no" required>
+            <input type="text" id="location1" placeholder="current location" required>
+            <input type="text" id="location2" placeholder="location you are seeking" required>
+            <textarea id="message" rows="4" placeholder="brief descrption of your choice"></textarea>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="regscript.js"></script>
+</body>
+</html>
